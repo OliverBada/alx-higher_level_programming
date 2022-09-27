@@ -1,4 +1,7 @@
 #!/usr/bin/python3
-for a in range(ord('a'), ord('z') + 1):
-    if chr(a) != 'e' and chr(a) != 'q':
-        print("{:c}".format(a), end='')
+
+def print_reversed_list_integer(my_list=[]):
+
+    if my_list:
+        for i in reversed(my_list):
+            print('{:d}'.format(i))
