@@ -1,23 +1,26 @@
-V#!/usr/bin/python3
+#!/usr/bin/python3
 """
-This is text indentation module.
-This module supplies one function, text_indentation().
-"""
+    Text Indention module
+    """
 
 
 def text_indentation(text):
     """
-    Print a text with 2 new lines after these characters: . ? :
+    print text
+    2 new lines after each of these characters: ., ? and :
+    Args:
+        text (str): text
+    Raise
+        TypeError: when text is not str
     """
-
     if type(text) is not str:
-        raise TypeError('text must be a string')
-
-    newline = True
-    for c in text:
-        if not (newline and c == ' '):
-            print(c, end='')
-            newline = False
-            if c in '.?:':
-                print('\n')
-                newline = True
+        raise TypeError("text must be a string")
+    a = 0
+    while a < len(text):
+        if text[a] in [':', '.', '?']:
+            print(text[a])
+            print()
+            a += 1
+        else:
+            print(text[a], end='')
+        a += 1
