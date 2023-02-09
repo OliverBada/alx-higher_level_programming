@@ -1,86 +1,62 @@
-# Javascript - Objects, Scopes and and Closures
+# 0x14. Javascript - Web scraping
 
-## Function Prototypes :floppy_disk:
-
-Prototypes for functions written in this project:
-
-| File               | Prototype                                               |
-| ------------------ | ------------------------------------------------------- |
-| `7-occurrences.js` | `exports.nbOccurences = function (list, searchElement)` |
-| `8-esrever.js`     | `exports.esrever = function (list)`                     |
-| `9-logme.js`       | `exports.logMe = function (item)`                       |
-| `10-converter.js`  | `exports.converter = function (base)`                   |
-
+This project involved practicing file I/O on Node.js and using the NPM request
+framework to interact with the [Star Wars](https://swapi.co/),
+[JSONplaceholder](https://jsonplaceholder.typicode.com), and
+[Twitter](https://developer.twitter.com/en/docs/api-reference-index) API's.
 
 ## Tasks :page_with_curl:
 
-* **0. Rectangle #0**
-  * [0-rectangle.js](./0-rectangle.js): JavaScript script that defines an empty
-  class `Rectangle`.
+* **0. Readme**
+  * [0-readme.js](./0-readme.js): JavaScript script that reads and prints the
+  contents of a file.
+  * Usage: `./0-readme.js <file path>`.
 
-* **1. Rectangle #1**
-  * [1-rectangle.js](./1-rectangle.js): JavaScript script that defines a class
-  `Rectangle`. Builds on [0-rectangle.js](./0-rectangle.js) with:
-    * Constructor that initializes instance attributes `width` and `height` with
-    given parameters `w` and `h`.
+* **1. Write me**
+  * [1-writeme.js](./1-writeme.js): JavaScript script that writes a string to a
+  file.
+  * Usage: `./1-writeme.js <file path> <string to write>`.
 
-* **2. Rectangle #2**
-  * [2-rectangle.js](./2-rectangle.js): JavaScript script that defines a class
-  `Rectangle`. Builds on [1-rectangle.js](./1-rectangle.js) with:
-    * If provided `w` and `h` are less than or equal to `0`, creates an empty object.
+* **2. Status code**
+  * [2-statuscode.js](./2-statuscode.js): JavaScript script that displays the
+  stauts code of a `GET` request using the `request` framework.
+  * Usage: `./2-statuscode.js <URL to GET>`.
+  * Output: `code: <status code>`.
 
-* **3. Rectangle #3**
-  * [3-rectangle.js](./3-rectangle.js): JavaScript script that defines a class
-  `Rectangle`. Builds on [3-rectangle.js](./3-rectangle.js) with:
-    * Instance method `print()` that prints the rectangle using the `X` character.
+* **3. Star wars movie title**
+  * [3-starwars_title.js](./3-starwars_title.js): JavaScript script that uses the
+  Star Wars API to print the title of the Star Wars movie with a given integer episode
+  number.
+  * Usage: `./3-starwars_title.js <3-starwars_title.js>`.
 
-* **4. Rectangle #4**
-  * [4-rectangle.js](./4-rectangle.js): JavaScript script that defines a class
-  `Rectangle`. Builds on [4-rectangle.js](./4-rectangle.js) with:
-    * Instance method `rotate()` that swaps the `width` and `height` of the `Rectangle`.
-    * Instance method `double()` that multiplies the `width` and `height` of the
-    `Rectangle` by `2`.
+* **4. Star wars Wedge Antilles**
+  * [4-starwars_count.js](./4-starwars_count.js): JavaScript script that uses the
+  Star Wars API to print the number of movies featuring the character "Wedge Antilles".
+  * Usage: `./4-starwars_count.js http://swapi.co/api/films/`.
 
-* **5. Square #0**
-  * [5-square.js](./5-square.js): JavaScript script that defines a class `Square`
-  that inherits from `Rectangle`.
-    * Constructor takes one argument `size`.
+* **5. Loripsum**
+  * [5-request_store.js](./5-request_store.js): JavaScript script that stores the
+  contents of a webpage in a file.
+  * Usage: `./5-request_store.js <URL to get> <file path to store content in>`.
 
-* **6. Square #1**
-  * [6-square.js](./6-square.js): JavaScript script that defines a class `Square`
-  that inherits from `Rectangle`. Builds on [5-square.js](./5-square.js) with:
-    * Instance method `charPrint(c)` that prints the `Square` using the character
-    `c`.
-    * If `c` is `undefined`, uses the character `X`.
+* **6. How many completed?**
+  * [6-completed_tasks.js](./6-completed_tasks.js): JavaScript script that uses the
+  JSONPlaceholder API to compute the number of tasks completed per user ID.
+  * Usage: `./6-completed_tasks.js https://jsonplaceholder.typicode.com/todos`.
 
-* **7. Occurrences**
-  * [7-occurrences.js](./7-occurrences.js): JavaScript function that returns the
-  number of occurrences in a list.
+* **7. Who was playing in this movie?**
+  * [100-starwars_characters.js](./100-starwars_characters.js): JavaScript script
+  that uses the Star Wars API to print all characters featured in a given movie.
+  * Usage: `./100-starwars_characters.js <movie ID>`.
 
-* **8. Esrever**
-  * [8-esrever.js](./8-esrever.js): JavaScript function that reverses a list.
+* **8. Right order**
+  * [101-starwars_characters.js](./101-starwars_characters.js): JavaScript script
+  that uses the Star Wars API to print all characters featured in a given movie in
+  the same order as they are listed in the `characters` list of the `/films/` response.
+  * Usage: `./101-starwars_characters.js <movie ID>`.
 
-* **9. Log me**
-  * [9-logme.js](./9-logme.js): JavaScript function that prints the number of
-  arguments already printed as well as the new argument value.
-  * Output: `<number arguments already printed>: <current argument value>`
-
-* **10. Number conversion**
-  * [10-converter.js](./10-converter.js): JavaScript function that converts a number
-  from base 10 to another base passed as argument.
-
-* **11. Factor index**
-  * [100-map.js](./100-map.js): JavaScript script that imports an array and creates
-  a new array with each value equal to the value of initial list times the index of
-  the new list.
-  * Prints both the initial and new list.
-
-* **12. Sorted occurences**
-  * [101-sorted.js](./101-sorted.js): JavaScript script that imports a dictionary
-  of occurrences by user ID and computes a new dictionary of user ID's by occurrences.
-  * Prints the new dictionary.
-
-* **13. Concat files**
-  * [102-concat.js](./102-concat.js): JavaScript script that concatenates two files
-  passed as arguments into a file specifed as the third argument.
-  * Usage: `./102-concat.js fileA fileB fileC`.
+* **9. Twitter Auth**
+  * [102-search_twitter.js](./102-search_twitter.js): JavaScript script that sends
+  a search request to the Twitter API with a given search string.
+  * Usage: `./102-search_twitter.js <consumer  key> <consumer secret> <search string>.
+  * Outputs 5 results in the format `[<Tweet ID>] <Tweet text> by <Tweet owner name>`.
